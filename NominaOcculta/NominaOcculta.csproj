@@ -13,15 +13,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Dalamud>$(AppData)\XIVLauncher\addon\Hooks\dev</Dalamud>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))'">
         <Dalamud>../xlcore/</Dalamud>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="'$(IsCI)' == 'true'">
-        <Dalamud>$(HOME)/dalamud</Dalamud>
     </PropertyGroup>
 
     <ItemGroup>
