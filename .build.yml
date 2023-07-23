@@ -1,0 +1,17 @@
+image: fedora/latest
+packages:
+  - dotnet
+  - wget
+  - unzip
+tasks:
+  - download-dalamud: |
+      mkdir dalamud
+      cd dalamud
+      wget https://github.com/goatcorp/dalamud-distrib/raw/main/latest.zip
+      unzip latest.zip
+      rm latest.zip
+  - build-plugin: |
+      cd NominaOcculta/NominaOcculta
+      dotnet build -c Release -p:IsCI=true
+artifacts:
+  - NominaOcculta/NominaOcculta/bin/Release/net5-windows/NominaOcculta/latest.zip
